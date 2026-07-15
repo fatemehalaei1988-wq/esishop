@@ -1,0 +1,23 @@
+<main class="pt-24 pb-20 container mx-auto px-4">
+    <h1 class="text-3xl font-black text-secondary mb-8 flex items-center gap-3">
+        <i class="fa-solid fa-bag-shopping text-primary"></i> سبد خرید شما
+    </h1>
+    <div class="grid lg:grid-cols-3 gap-8">
+        <!-- لیست آیتم‌ها -->
+        <div class="lg:col-span-2 space-y-4" id="cart-items">
+            <!-- توسط JS پر می‌شود -->
+        </div>
+        
+        <!-- خلاصه سفارش -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm h-fit border border-gray-100 sticky top-24">
+            <h3 class="font-black text-lg mb-6 text-secondary border-b pb-3">خلاصه سفارش</h3>
+            <div class="flex justify-between mb-3 text-gray-600"><span>جمع کل محصولات</span><span id="cart-subtotal">۰ تومان</span></div>
+            <div class="flex justify-between mb-6 text-gray-600"><span>هزینه ارسال</span><span class="text-green-600 font-bold">رایگان</span></div>
+            <div class="border-t pt-4 flex justify-between font-black text-xl text-primary mb-6">
+                <span>مبلغ قابل پرداخت</span><span id="cart-total">۰ تومان</span>
+            </div>
+            <button class="w-full bg-primary text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-500/30 mb-3">ادامه فرآیند پرداخت</button>
+            <a href="shop.html" class="block text-center text-gray-500 hover:text-primary text-sm transition">بازگشت به فروشگاه</a>
+        </div>
+    </div>
+</main>

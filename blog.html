@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="وبلاگ فلش فلو - مقالات آموزشی و اخبار دنیای تکنولوژی">
+    <title>وبلاگ | فلش فلو</title>
+    
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Vazirmatn', 'sans-serif'] },
+                    colors: { primary: '#2563EB', secondary: '#0F172A', accent: '#F59E0B' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- Header (همان هدر index.html) -->
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold text-primary flex items-center gap-2">
+                <i class="fa-solid fa-bolt"></i> فلش فلو
+            </a>
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="hover:text-primary transition">خانه</a>
+                <a href="shop.html" class="hover:text-primary transition">محصولات</a>
+                <a href="blog.html" class="text-primary font-bold">وبلاگ</a>
+                <a href="contact.html" class="hover:text-primary transition">تماس با ما</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="cart.html" class="relative hover:text-primary transition"><i class="fa-solid fa-cart-shopping text-xl"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 pb-20">
+        <!-- Hero Section -->
+        <section class="bg-secondary text-white py-16 mb-12">
+            <div class="container mx-auto px-4 text-center">
+                <span class="text-[#7cb342] font-bold text-sm uppercase tracking-wider">Our Blog</span>
+                <h1 class="text-4xl md:text-5xl font-black mt-2">Latest Articles</h1>
+                <p class="text-gray-300 mt-4 max-w-2xl mx-auto">جدیدترین مقالات آموزشی و اخبار دنیای تکنولوژی را اینجا بخوانید</p>
+            </div>
+        </section>
+
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                
+                <!-- سایدبار -->
+                <aside class="lg:col-span-1 space-y-6">
+                    <!-- جستجو -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                        <h3 class="font-bold text-lg mb-4 text-secondary">جستجو</h3>
+                        <div class="relative">
+                            <input type="text" placeholder="جستجو در مقالات..." class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 pr-10 focus:outline-none focus:border-primary transition">
+                            <i class="fa-solid fa-search absolute right-3 top-4 text-gray-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- دسته‌بندی -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                        <h3 class="font-bold text-lg mb-4 text-secondary">دسته‌بندی</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="flex items-center justify-between text-gray-600 hover:text-primary transition"><span>تکنولوژی</span><span class="bg-gray-100 px-2 py-1 rounded text-xs">12</span></a></li>
+                            <li><a href="#" class="flex items-center justify-between text-gray-600 hover:text-primary transition"><span>موبایل</span><span class="bg-gray-100 px-2 py-1 rounded text-xs">8</span></a></li>
+                            <li><a href="#" class="flex items-center justify-between text-gray-600 hover:text-primary transition"><span>لپ‌تاپ</span><span class="bg-gray-100 px-2 py-1 rounded text-xs">15</span></a></li>
+                            <li><a href="#" class="flex items-center justify-between text-gray-600 hover:text-primary transition"><span>هدفون</span><span class="bg-gray-100 px-2 py-1 rounded text-xs">6</span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- مقالات محبوب -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                        <h3 class="font-bold text-lg mb-4 text-secondary">مقالات محبوب</h3>
+                        <div class="space-y-4">
+                            <a href="blog-post.html?id=1" class="flex gap-3 group">
+                                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=100&q=80" class="w-16 h-16 rounded-lg object-cover">
+                                <div>
+                                    <h4 class="text-sm font-bold text-secondary group-hover:text-primary transition line-clamp-2">Reasons to Upgrade Your Smartphone</h4>
+                                    <span class="text-xs text-gray-400">14 Nov 2024</span>
+                                </div>
+                            </a>
+                            <a href="blog-post.html?id=2" class="flex gap-3 group">
+                                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=100&q=80" class="w-16 h-16 rounded-lg object-cover">
+                                <div>
+                                    <h4 class="text-sm font-bold text-secondary group-hover:text-primary transition line-clamp-2">Laptop vs. MacBook: A Quick Guide</h4>
+                                    <span class="text-xs text-gray-400">27 Oct 2024</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- لیست مقالات -->
+                <div class="lg:col-span-3">
+                    <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- توسط JavaScript پر می‌شود -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="flex justify-center gap-2 mt-12">
+                        <button class="w-10 h-10 rounded-lg bg-primary text-white font-bold">1</button>
+                        <button class="w-10 h-10 rounded-lg bg-white border border-gray-200 hover:bg-gray-50 transition">2</button>
+                        <button class="w-10 h-10 rounded-lg bg-white border border-gray-200 hover:bg-gray-50 transition">3</button>
+                        <button class="w-10 h-10 rounded-lg bg-white border border-gray-200 hover:bg-gray-50 transition"><i class="fa-solid fa-chevron-left"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (همان فوتر index.html) -->
+    <footer class="bg-secondary text-gray-300 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 فلش فلو. تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script>
+        // داده‌های بلاگ
+        const blogPosts = [
+            {
+                id: 1,
+                title: "Reasons to Upgrade Your Smartphone",
+                excerpt: "Get better cameras, faster speeds, and improved security. Upgrade for smoother, more efficient use.",
+                image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80",
+                author: "Admin",
+                publishDate: "2024-11-14",
+                updateDate: "2024-11-15",
+                comments: 2,
+                category: "موبایل"
+            },
+            {
+                id: 2,
+                title: "Laptop vs. MacBook: A Quick Guide",
+                excerpt: "Laptops offer flexibility; MacBooks provide seamless integration. Pick based on budget and tech needs.",
+                image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&q=80",
+                author: "Admin",
+                publishDate: "2024-10-27",
+                updateDate: "2024-10-28",
+                comments: 2,
+                category: "لپ‌تاپ"
+            },
+            {
+                id: 3,
+                title: "The Case for Wireless Headphones",
+                excerpt: "Enjoy tangle-free audio, portability, and great sound quality. Wireless is the future of listening.",
+                image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80",
+                author: "Admin",
+                publishDate: "2024-10-15",
+                updateDate: "2024-10-16",
+                comments: 2,
+                category: "هدفون"
+            },
+            {
+                id: 4,
+                title: "Best Gaming Laptops 2024",
+                excerpt: "Discover the top gaming laptops with powerful GPUs, high refresh rates, and excellent cooling systems.",
+                image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=600&q=80",
+                author: "Tech Expert",
+                publishDate: "2024-09-20",
+                updateDate: "2024-09-22",
+                comments: 5,
+                category: "گیمینگ"
+            }
+        ];
+
+        // فرمت تاریخ
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { year: 'numeric', month: 'short', day: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        // رندر بلاگ
+        function renderBlogPosts() {
+            const container = document.getElementById('blog-grid');
+            if (!container) return;
+
+            container.innerHTML = blogPosts.map(post => `
+                <article class="blog-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group">
+                    <div class="relative overflow-hidden h-56">
+                        <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2">
+                            <span class="text-2xl font-black text-[#7cb342]">${new Date(post.publishDate).getDate()}</span>
+                            <span class="text-xs text-gray-600 block">${new Date(post.publishDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <span><i class="fa-regular fa-user ml-1"></i> By ${post.author}</span>
+                            <span><i class="fa-regular fa-comment ml-1"></i> ${post.comments} comment</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-gray-400 mb-3">
+                            <span><i class="fa-regular fa-calendar ml-1"></i> انتشار: ${formatDate(post.publishDate)}</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-gray-400 mb-3">
+                            <span><i class="fa-solid fa-rotate ml-1"></i> به‌روزرسانی: ${formatDate(post.updateDate)}</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-secondary mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                            <a href="blog-post.html?id=${post.id}">${post.title}</a>
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">${post.excerpt}</p>
+                        <a href="blog-post.html?id=${post.id}" class="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
+                            Read More <i class="fa-solid fa-arrow-left text-sm"></i>
+                        </a>
+                    </div>
+                </article>
+            `).join('');
+
+            // انیمیشن
+            gsap.utils.toArray('.blog-card').forEach((card, i) => {
+                gsap.from(card, {
+                    scrollTrigger: { trigger: card, start: "top 85%" },
+                    y: 40, opacity: 0, duration: 0.6, delay: i * 0.1, ease: "power2.out"
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', renderBlogPosts);
+    </script>
+</body>
+</html>
