@@ -32,41 +32,220 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
 
-    <!-- Header & Mega Menu -->
-    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="main-header">
-        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold text-primary flex items-center gap-2">
-                <i class="fa-solid fa-bolt"></i> فلش فلو
-            </a>
+<!-- Header -->
+<header class="fixed w-full top-0 z-50 bg-white shadow-sm transition-all duration-300" id="main-header">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-3">
             
-            <nav class="hidden lg:flex items-center gap-8">
-                <a href="index.html" class="hover:text-primary transition">خانه</a>
-                <div class="group relative">
-                    <button class="flex items-center gap-1 hover:text-primary transition">محصولات <i class="fa-solid fa-chevron-down text-xs"></i></button>
-                    <!-- Mega Menu -->
-                    <div class="absolute top-full right-0 w-64 bg-white shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border border-gray-100 p-2">
-                        <a href="shop.html" class="block px-4 py-3 rounded-lg hover:bg-gray-50 transition flex items-center gap-3"><i class="fa-solid fa-headphones text-gray-400"></i> هدفون و هندزفری</a>
-                        <a href="shop.html" class="block px-4 py-3 rounded-lg hover:bg-gray-50 transition flex items-center gap-3"><i class="fa-solid fa-laptop text-gray-400"></i> لپ‌تاپ و کامپیوتر</a>
-                        <a href="shop.html" class="block px-4 py-3 rounded-lg hover:bg-gray-50 transition flex items-center gap-3"><i class="fa-solid fa-clock text-gray-400"></i> ساعت هوشمند</a>
+            <!-- سمت راست: لوگو + اطلاعات تماس -->
+            <div class="flex items-center gap-6">
+                <!-- لوگو -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 bg-gradient-to-br from-primary to-cyan-500 rounded-xl flex items-center justify-center shadow-lg shadow-primary/30 group-hover:scale-110 transition-all duration-300">
+                        <i class="fa-solid fa-bolt text-xl text-white"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <h1 class="text-xl font-black text-secondary">فلش فلو</h1>
+                        <p class="text-[10px] text-gray-400">Flash Flow</p>
+                    </div>
+                </a>
+
+                <!-- خط جداکننده -->
+                <div class="hidden lg:block w-px h-8 bg-gray-200"></div>
+
+                <!-- اطلاعات تماس -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:09125165048" class="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+                        <i class="fa-solid fa-phone text-primary text-sm"></i>
+                        <span class="text-sm font-bold" dir="ltr">0912 516 5048</span>
+                    </a>
+                    <!-- <span class="text-gray-300 text-xs">|</span>
+                    <span class="text-xs text-gray-500">پشتیبانی ۲۴ ساعته</span> -->
+                </div>
+            </div>
+
+            <!-- وسط: منوی اصلی با مگا منو -->
+            <nav class="hidden lg:flex items-center gap-1">
+                <a href="index.html" class="px-4 py-2.5 text-sm font-bold text-secondary hover:text-primary transition-colors duration-300 rounded-lg hover:bg-gray-50">
+                    خانه
+                </a>
+                
+                <!-- مگا منو محصولات -->
+                <div class="relative group">
+                    <button class="px-4 py-2.5 text-sm font-bold text-secondary hover:text-primary transition-colors duration-300 rounded-lg hover:bg-gray-50 flex items-center gap-1">
+                        محصولات
+                        <i class="fa-solid fa-chevron-down text-xs transform group-hover:rotate-180 transition-transform duration-300"></i>
+                    </button>
+                    
+                    <!-- مگا منو -->
+                    <div class="absolute top-full right-0 w-[800px] bg-white shadow-2xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border border-gray-100 p-6 mt-2">
+                        <div class="grid grid-cols-4 gap-6">
+                            <!-- دسته‌بندی 1 -->
+                            <div>
+                                <h4 class="font-bold text-secondary mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-futbol text-primary"></i>
+                                    فوتبال
+                                </h4>
+                                <ul class="space-y-2">
+                                    <li><a href="shop.html?category=football-shoes" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">کفش فوتبال</a></li>
+                                    <li><a href="shop.html?category=jerseys" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">لباس تیم‌ها</a></li>
+                                    <li><a href="shop.html?category=football-balls" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">توپ فوتبال</a></li>
+                                    <li><a href="shop.html?category=goalkeeper" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">لوازم دروازه‌بانی</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- دسته‌بندی 2 -->
+                            <div>
+                                <h4 class="font-bold text-secondary mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-dumbbell text-primary"></i>
+                                    بدنسازی
+                                </h4>
+                                <ul class="space-y-2">
+                                    <li><a href="shop.html?category=dumbbells" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">دمبل و وزنه</a></li>
+                                    <li><a href="shop.html?category=benches" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">نیمکت ورزشی</a></li>
+                                    <li><a href="shop.html?category=cables" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">دستگاه کابل</a></li>
+                                    <li><a href="shop.html?category=proteins" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">مکمل‌ها</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- دسته‌بندی 3 -->
+                            <div>
+                                <h4 class="font-bold text-secondary mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-person-running text-primary"></i>
+                                    دویدن
+                                </h4>
+                                <ul class="space-y-2">
+                                    <li><a href="shop.html?category=running-shoes" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">کفش دویدن</a></li>
+                                    <li><a href="shop.html?category=sportswear" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">لباس ورزشی</a></li>
+                                    <li><a href="shop.html?category=smartwatch" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">ساعت ورزشی</a></li>
+                                    <li><a href="shop.html?category=accessories" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">لوازم جانبی</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- دسته‌بندی 4 -->
+                            <div>
+                                <h4 class="font-bold text-secondary mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-person-swimming text-primary"></i>
+                                    شنا
+                                </h4>
+                                <ul class="space-y-2">
+                                    <li><a href="shop.html?category=swimming-goggles" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">عینک شنا</a></li>
+                                    <li><a href="shop.html?category=swim-caps" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">کلاه شنا</a></li>
+                                    <li><a href="shop.html?category=swimsuits" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">مایو</a></li>
+                                    <li><a href="shop.html?category=swim-accessories" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">لوازم جانبی</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- بنر پایین مگا منو -->
+                        <div class="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between bg-gradient-to-r from-primary/5 to-cyan-500/5 p-4 rounded-xl">
+                            <div>
+                                <h5 class="font-bold text-secondary mb-1">🎉 تخفیف ویژه اولین خرید</h5>
+                                <p class="text-sm text-gray-600">از همه محصولات با ۲۰٪ تخفیف دیدن کنید</p>
+                            </div>
+                            <a href="shop.html" class="bg-primary text-white px-6 py-2.5 rounded-xl text-sm font-bold hover:bg-blue-700 transition-colors">
+                                مشاهده همه
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <a href="blog.html" class="hover:text-primary transition">وبلاگ</a>
-                <a href="contact.html" class="hover:text-primary transition">تماس با ما</a>
+                
+                <a href="blog.html" class="px-4 py-2.5 text-sm font-bold text-secondary hover:text-primary transition-colors duration-300 rounded-lg hover:bg-gray-50">
+                    وبلاگ
+                </a>
+                
+                <a href="contact.html" class="px-4 py-2.5 text-sm font-bold text-secondary hover:text-primary transition-colors duration-300 rounded-lg hover:bg-gray-50">
+                    تماس با ما
+                </a>
             </nav>
 
-            <div class="flex items-center gap-4">
-                <!-- Ajax Search -->
-                <div class="relative hidden md:block">
-                    <input type="text" id="global-search" placeholder="جستجوی محصول..." class="bg-gray-100 rounded-full px-4 py-2 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-primary w-48 transition-all focus:w-64">
-                    <i class="fa-solid fa-search absolute right-3 top-2.5 text-gray-400"></i>
-                    <div id="search-results" class="absolute top-full left-0 w-full bg-white shadow-lg rounded-lg mt-2 hidden border border-gray-100"></div>
+            <!-- سمت چپ: جستجو + آیکون‌ها + شبکه‌های اجتماعی -->
+            <div class="flex items-center gap-3">
+                <!-- شبکه‌های اجتماعی (فقط دسکتاپ) -->
+                <div class="hidden xl:flex items-center gap-2">
+                    <a href="https://instagram.com/flashflow" target="_blank" class="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                    </a>
+                    <a href="https://t.me/flashflow" target="_blank" class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
+                        <i class="fa-brands fa-telegram text-sm"></i>
+                    </a>
+                    <a href="https://wa.me/989125165048" target="_blank" class="w-9 h-9 rounded-lg bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                    </a>
                 </div>
-                <a href="wishlist.html" class="relative hover:text-primary transition"><i class="fa-regular fa-heart text-xl"></i><span id="wishlist-count" class="absolute -top-2 -right-2 bg-accent text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span></a>
-                <a href="cart.html" class="relative hover:text-primary transition"><i class="fa-solid fa-cart-shopping text-xl"></i><span id="cart-count" class="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span></a>
-                <a href="login.html" class="hidden md:flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full hover:bg-blue-700 transition text-sm"><i class="fa-regular fa-user"></i> ورود</a>
+
+                <!-- خط جداکننده -->
+                <div class="hidden xl:block w-px h-6 bg-gray-200"></div>
+
+                <!-- جستجو -->
+                <div class="relative hidden md:block">
+                    <input type="text" id="global-search" placeholder="جستجو..." 
+                           class="bg-gray-100 rounded-xl px-4 py-2.5 pr-9 text-sm focus:outline-none focus:ring-2 focus:ring-primary w-40 lg:w-56 transition-all">
+                    <i class="fa-solid fa-search absolute right-3 top-2.5 text-gray-400 text-sm"></i>
+                </div>
+
+                <!-- علاقه‌مندی‌ها -->
+                <a href="wishlist.html" class="relative hover:text-primary transition group">
+                    <div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
+                        <i class="fa-regular fa-heart text-lg"></i>
+                    </div>
+                    <span id="wishlist-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold">0</span>
+                </a>
+
+                <!-- سبد خرید -->
+                <a href="cart.html" class="relative hover:text-primary transition group">
+                    <div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
+                        <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    </div>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold">0</span>
+                </a>
+
+                <!-- ورود -->
+                <a href="login.html" class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-primary to-blue-600 text-white px-4 py-2.5 rounded-xl hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 text-sm font-bold">
+                    <i class="fa-regular fa-user"></i>
+                    <span class="hidden lg:inline">ورود</span>
+                </a>
+
+                <!-- منوی موبایل -->
+                <button class="lg:hidden text-secondary text-xl w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center" id="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
-    </header>
+
+        <!-- منوی موبایل -->
+        <div class="lg:hidden hidden border-t border-gray-100 py-4" id="mobile-menu">
+            <nav class="flex flex-col gap-2">
+                <a href="index.html" class="px-4 py-3 text-secondary font-bold hover:bg-gray-50 rounded-xl transition-colors">خانه</a>
+                <a href="shop.html" class="px-4 py-3 text-secondary font-bold hover:bg-gray-50 rounded-xl transition-colors">محصولات</a>
+                <a href="blog.html" class="px-4 py-3 text-secondary font-bold hover:bg-gray-50 rounded-xl transition-colors">وبلاگ</a>
+                <a href="contact.html" class="px-4 py-3 text-secondary font-bold hover:bg-gray-50 rounded-xl transition-colors">تماس با ما</a>
+                
+                <div class="border-t border-gray-100 pt-3 mt-3 space-y-3">
+                    <a href="tel:09125165048" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl transition-colors">
+                        <i class="fa-solid fa-phone text-primary"></i>
+                        <span class="font-bold" dir="ltr">0912 516 5048</span>
+                    </a>
+                    
+                    <div class="flex gap-2 px-4">
+                        <a href="https://instagram.com/flashflow" target="_blank" class="flex-1 h-11 rounded-xl bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 flex items-center justify-center text-white">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://t.me/flashflow" target="_blank" class="flex-1 h-11 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                        <a href="https://wa.me/989125165048" target="_blank" class="flex-1 h-11 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- Spacer با ارتفاع مناسب -->
+<div class="h-20 lg:h-24"></div>
 
    <main class="pt-24 pb-20 container mx-auto px-4">
     <div class="flex flex-col lg:flex-row gap-8">
@@ -123,41 +302,137 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-secondary text-gray-300 py-16 mt-20">
-        <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
-            <div>
-                <h3 class="text-white text-xl font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-bolt text-primary"></i> فلش فلو</h3>
-                <p class="text-sm leading-7">ارائه‌دهنده جدیدترین گجت‌های دیجیتال با ضمانت اصالت و بهترین قیمت بازار.</p>
+  <!-- Footer -->
+<footer class="relative bg-secondary text-white overflow-hidden">
+    <!-- بک‌گراند تصویر فوتبالی -->
+    <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?w=1920&q=80" 
+             alt="Football Stadium Background" 
+             class="w-full h-full object-cover opacity-15">
+        <div class="absolute inset-0 bg-gradient-to-b from-secondary/95 via-secondary/95 to-black"></div>
+    </div>
+
+    <!-- المان‌های تزئینی -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        <!-- بخش اصلی فوتر -->
+        <div class="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+            
+            <!-- ستون 1: درباره ما -->
+            <div class="lg:col-span-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary to-cyan-500 rounded-xl flex items-center justify-center shadow-lg shadow-primary/30">
+                        <i class="fa-solid fa-bolt text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black">فلش فلو</h3>
+                        <p class="text-xs text-gray-400">Flash Flow</p>
+                    </div>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
+                    ارائه‌دهنده برترین تجهیزات ورزشی با کیفیت جهانی. همراه شما در مسیر سلامتی و قهرمانی.
+                </p>
+                
+                <!-- شبکه‌های اجتماعی -->
+                <div class="mb-6">
+                    <h4 class="text-sm font-bold mb-4 text-gray-300">ما را دنبال کنید</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <!-- اینستاگرام -->
+                        <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300" title="اینستاگرام">
+                            <i class="fa-brands fa-instagram text-xl text-white"></i>
+                        </a>
+                        <!-- تلگرام -->
+                        <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300" title="تلگرام">
+                            <i class="fa-brands fa-telegram text-xl text-white"></i>
+                        </a>
+                        <!-- واتساپ -->
+                        <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-green-500/30 transition-all duration-300" title="واتساپ">
+                            <i class="fa-brands fa-whatsapp text-xl text-white"></i>
+                        </a>
+                        <!-- بله -->
+                        <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300" title="بله">
+                            <i class="fa-solid fa-check-double text-xl text-white"></i>
+                        </a>
+                        <!-- نشان -->
+                        <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300" title="نشان">
+                            <i class="fa-solid fa-location-crosshairs text-xl text-white"></i>
+                        </a>
+                        <!-- بلد -->
+                        <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300" title="بلد">
+                            <i class="fa-solid fa-map-location-dot text-xl text-white"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
+
+            <!-- ستون 2: دسترسی سریع -->
             <div>
-                <h4 class="text-white font-bold mb-4">دسترسی سریع</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="shop.html" class="hover:text-primary transition">فروشگاه</a></li>
-                    <li><a href="blog.html" class="hover:text-primary transition">وبلاگ</a></li>
-                    <li><a href="contact.html" class="hover:text-primary transition">تماس با ما</a></li>
+                <h4 class="text-lg font-bold mb-6 flex items-center gap-2">
+                    <span class="w-1 h-6 bg-primary rounded-full"></span>
+                    دسترسی سریع
+                </h4>
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"><i class="fa-solid fa-chevron-left text-xs transform group-hover:-translate-x-1 transition-transform"></i> صفحه اصلی</a></li>
+                    <li><a href="shop.html" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"><i class="fa-solid fa-chevron-left text-xs transform group-hover:-translate-x-1 transition-transform"></i> فروشگاه</a></li>
+                    <li><a href="blog.html" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"><i class="fa-solid fa-chevron-left text-xs transform group-hover:-translate-x-1 transition-transform"></i> وبلاگ</a></li>
+                    <li><a href="contact.html" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"><i class="fa-solid fa-chevron-left text-xs transform group-hover:-translate-x-1 transition-transform"></i> تماس با ما</a></li>
                 </ul>
             </div>
+
+            <!-- ستون 3: دسته‌بندی‌ها -->
             <div>
-                <h4 class="text-white font-bold mb-4">حساب کاربری</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="login.html" class="hover:text-primary transition">ورود / ثبت‌نام</a></li>
-                    <li><a href="profile.html" class="hover:text-primary transition">پروفایل کاربری</a></li>
-                    <li><a href="cart.html" class="hover:text-primary transition">سبد خرید</a></li>
+                <h4 class="text-lg font-bold mb-6 flex items-center gap-2">
+                    <span class="w-1 h-6 bg-primary rounded-full"></span>
+                    دسته‌بندی‌ها
+                </h4>
+                <ul class="space-y-3">
+                    <li><a href="shop.html?category=football" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"><i class="fa-solid fa-chevron-left text-xs transform group-hover:-translate-x-1 transition-transform"></i> فوتبال</a></li>
+                    <li><a href="shop.html?category=fitness" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"><i class="fa-solid fa-chevron-left text-xs transform group-hover:-translate-x-1 transition-transform"></i> بدنسازی</a></li>
+                    <li><a href="shop.html?category=running" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"><i class="fa-solid fa-chevron-left text-xs transform group-hover:-translate-x-1 transition-transform"></i> دویدن</a></li>
+                    <li><a href="shop.html?category=swimming" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"><i class="fa-solid fa-chevron-left text-xs transform group-hover:-translate-x-1 transition-transform"></i> شنا</a></li>
                 </ul>
             </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">خبرنامه</h4>
-                <form class="flex gap-2">
-                    <input type="email" placeholder="ایمیل شما" class="bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-sm w-full focus:outline-none focus:border-primary">
-                    <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"><i class="fa-solid fa-paper-plane"></i></button>
-                </form>
+
+            <!-- ستون 4: نقشه -->
+            <div class="lg:col-span-1">
+                <h4 class="text-lg font-bold mb-6 flex items-center gap-2">
+                    <span class="w-1 h-6 bg-primary rounded-full"></span>
+                    موقعیت ما
+                </h4>
+                <div class="rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 h-64">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.8976781593616!2d51.3374253!3d35.689197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e0070a0a0a0a0%3A0x0!2zMTIz!5e0!3m2!1sen!2sir!4v1234567890" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; filter: grayscale(100%) invert(92%) contrast(83%);" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="نقشه موقعیت">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- خط جداکننده -->
+        <div class="border-t border-white/10 my-8"></div>
+
+        <!-- بخش پایینی -->
+        <div class="py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-gray-400 text-sm text-center md:text-right">
+                © ۱۴۰۳ فلش فلو. تمامی حقوق محفوظ است.
+            </p>
+            <div class="flex items-center gap-4">
+                <a href="#" class="text-gray-400 hover:text-primary text-sm transition-colors">قوانین و مقررات</a>
+                <span class="text-gray-600">|</span>
+                <a href="#" class="text-gray-400 hover:text-primary text-sm transition-colors">حریم خصوصی</a>
             </div>
         </div>
-        <div class="border-t border-white/10 mt-12 pt-8 text-center text-sm">
-            © ۲۰۲۴ فلش فلو. تمامی حقوق محفوظ است.
-        </div>
-    </footer>
+    </div>
+</footer>
 
     <script src="js/app.js"></script>
 </body>

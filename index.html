@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     
+    
     <script>
         tailwind.config = {
             theme: {
@@ -33,43 +34,220 @@
 
 <body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
 
-    <!-- Header & Mega Menu -->
-    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="main-header">
-        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold text-primary flex items-center gap-2">
-                <i class="fa-solid fa-bolt"></i> فلش فلو
-            </a>
+<!-- Header -->
+<header class="fixed w-full top-0 z-50 bg-white shadow-sm transition-all duration-300" id="main-header">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-3">
             
-            <nav class="hidden lg:flex items-center gap-8">
-                <a href="index.html" class="hover:text-primary transition">خانه</a>
-                <div class="group relative">
-                    <button class="flex items-center gap-1 hover:text-primary transition">محصولات <i class="fa-solid fa-chevron-down text-xs"></i></button>
-                    <!-- Mega Menu -->
-                    <div class="absolute top-full right-0 w-64 bg-white shadow-xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border border-gray-100 p-2">
-                        <a href="shop.html" class="block px-4 py-3 rounded-lg hover:bg-gray-50 transition flex items-center gap-3"><i class="fa-solid fa-headphones text-gray-400"></i> هدفون و هندزفری</a>
-                        <a href="shop.html" class="block px-4 py-3 rounded-lg hover:bg-gray-50 transition flex items-center gap-3"><i class="fa-solid fa-laptop text-gray-400"></i> لپ‌تاپ و کامپیوتر</a>
-                        <a href="shop.html" class="block px-4 py-3 rounded-lg hover:bg-gray-50 transition flex items-center gap-3"><i class="fa-solid fa-clock text-gray-400"></i> ساعت هوشمند</a>
+            <!-- سمت راست: لوگو + اطلاعات تماس -->
+            <div class="flex items-center gap-6">
+                <!-- لوگو -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 bg-gradient-to-br from-primary to-cyan-500 rounded-xl flex items-center justify-center shadow-lg shadow-primary/30 group-hover:scale-110 transition-all duration-300">
+                        <i class="fa-solid fa-bolt text-xl text-white"></i>
+                    </div>
+                    <div class="hidden sm:block">
+                        <h1 class="text-xl font-black text-secondary">فلش فلو</h1>
+                        <p class="text-[10px] text-gray-400">Flash Flow</p>
+                    </div>
+                </a>
+
+                <!-- خط جداکننده -->
+                <div class="hidden lg:block w-px h-8 bg-gray-200"></div>
+
+                <!-- اطلاعات تماس -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="tel:09125165048" class="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+                        <i class="fa-solid fa-phone text-primary text-sm"></i>
+                        <span class="text-sm font-bold" dir="ltr">0912 516 5048</span>
+                    </a>
+                    <!-- <span class="text-gray-300 text-xs">|</span>
+                    <span class="text-xs text-gray-500">پشتیبانی ۲۴ ساعته</span> -->
+                </div>
+            </div>
+
+            <!-- وسط: منوی اصلی با مگا منو -->
+            <nav class="hidden lg:flex items-center gap-1">
+                <a href="index.html" class="px-4 py-2.5 text-sm font-bold text-secondary hover:text-primary transition-colors duration-300 rounded-lg hover:bg-gray-50">
+                    خانه
+                </a>
+                
+                <!-- مگا منو محصولات -->
+                <div class="relative group">
+                    <button class="px-4 py-2.5 text-sm font-bold text-secondary hover:text-primary transition-colors duration-300 rounded-lg hover:bg-gray-50 flex items-center gap-1">
+                        محصولات
+                        <i class="fa-solid fa-chevron-down text-xs transform group-hover:rotate-180 transition-transform duration-300"></i>
+                    </button>
+                    
+                    <!-- مگا منو -->
+                    <div class="absolute top-full right-0 w-[800px] bg-white shadow-2xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 border border-gray-100 p-6 mt-2">
+                        <div class="grid grid-cols-4 gap-6">
+                            <!-- دسته‌بندی 1 -->
+                            <div>
+                                <h4 class="font-bold text-secondary mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-futbol text-primary"></i>
+                                    فوتبال
+                                </h4>
+                                <ul class="space-y-2">
+                                    <li><a href="shop.html?category=football-shoes" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">کفش فوتبال</a></li>
+                                    <li><a href="shop.html?category=jerseys" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">لباس تیم‌ها</a></li>
+                                    <li><a href="shop.html?category=football-balls" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">توپ فوتبال</a></li>
+                                    <li><a href="shop.html?category=goalkeeper" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">لوازم دروازه‌بانی</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- دسته‌بندی 2 -->
+                            <div>
+                                <h4 class="font-bold text-secondary mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-dumbbell text-primary"></i>
+                                    بدنسازی
+                                </h4>
+                                <ul class="space-y-2">
+                                    <li><a href="shop.html?category=dumbbells" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">دمبل و وزنه</a></li>
+                                    <li><a href="shop.html?category=benches" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">نیمکت ورزشی</a></li>
+                                    <li><a href="shop.html?category=cables" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">دستگاه کابل</a></li>
+                                    <li><a href="shop.html?category=proteins" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">مکمل‌ها</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- دسته‌بندی 3 -->
+                            <div>
+                                <h4 class="font-bold text-secondary mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-person-running text-primary"></i>
+                                    دویدن
+                                </h4>
+                                <ul class="space-y-2">
+                                    <li><a href="shop.html?category=running-shoes" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">کفش دویدن</a></li>
+                                    <li><a href="shop.html?category=sportswear" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">لباس ورزشی</a></li>
+                                    <li><a href="shop.html?category=smartwatch" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">ساعت ورزشی</a></li>
+                                    <li><a href="shop.html?category=accessories" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">لوازم جانبی</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- دسته‌بندی 4 -->
+                            <div>
+                                <h4 class="font-bold text-secondary mb-3 flex items-center gap-2">
+                                    <i class="fa-solid fa-person-swimming text-primary"></i>
+                                    شنا
+                                </h4>
+                                <ul class="space-y-2">
+                                    <li><a href="shop.html?category=swimming-goggles" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">عینک شنا</a></li>
+                                    <li><a href="shop.html?category=swim-caps" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">کلاه شنا</a></li>
+                                    <li><a href="shop.html?category=swimsuits" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">مایو</a></li>
+                                    <li><a href="shop.html?category=swim-accessories" class="text-sm text-gray-600 hover:text-primary transition-colors block py-1">لوازم جانبی</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- بنر پایین مگا منو -->
+                        <div class="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between bg-gradient-to-r from-primary/5 to-cyan-500/5 p-4 rounded-xl">
+                            <div>
+                                <h5 class="font-bold text-secondary mb-1">🎉 تخفیف ویژه اولین خرید</h5>
+                                <p class="text-sm text-gray-600">از همه محصولات با ۲۰٪ تخفیف دیدن کنید</p>
+                            </div>
+                            <a href="shop.html" class="bg-primary text-white px-6 py-2.5 rounded-xl text-sm font-bold hover:bg-blue-700 transition-colors">
+                                مشاهده همه
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <a href="blog.html" class="hover:text-primary transition">وبلاگ</a>
-                <a href="contact.html" class="hover:text-primary transition">تماس با ما</a>
+                
+                <a href="blog.html" class="px-4 py-2.5 text-sm font-bold text-secondary hover:text-primary transition-colors duration-300 rounded-lg hover:bg-gray-50">
+                    وبلاگ
+                </a>
+                
+                <a href="contact.html" class="px-4 py-2.5 text-sm font-bold text-secondary hover:text-primary transition-colors duration-300 rounded-lg hover:bg-gray-50">
+                    تماس با ما
+                </a>
             </nav>
 
-            <div class="flex items-center gap-4">
-                <!-- Ajax Search -->
-                <div class="relative hidden md:block">
-                    <input type="text" id="global-search" placeholder="جستجوی محصول..." class="bg-gray-100 rounded-full px-4 py-2 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-primary w-48 transition-all focus:w-64">
-                    <i class="fa-solid fa-search absolute right-3 top-2.5 text-gray-400"></i>
-                    <div id="search-results" class="absolute top-full left-0 w-full bg-white shadow-lg rounded-lg mt-2 hidden border border-gray-100"></div>
+            <!-- سمت چپ: جستجو + آیکون‌ها + شبکه‌های اجتماعی -->
+            <div class="flex items-center gap-3">
+                <!-- شبکه‌های اجتماعی (فقط دسکتاپ) -->
+                <div class="hidden xl:flex items-center gap-2">
+                    <a href="https://instagram.com/flashflow" target="_blank" class="w-9 h-9 rounded-lg bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
+                        <i class="fa-brands fa-instagram text-sm"></i>
+                    </a>
+                    <a href="https://t.me/flashflow" target="_blank" class="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
+                        <i class="fa-brands fa-telegram text-sm"></i>
+                    </a>
+                    <a href="https://wa.me/989125165048" target="_blank" class="w-9 h-9 rounded-lg bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                    </a>
                 </div>
-                <a href="wishlist.html" class="relative hover:text-primary transition"><i class="fa-regular fa-heart text-xl"></i><span id="wishlist-count" class="absolute -top-2 -right-2 bg-accent text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span></a>
-                <a href="cart.html" class="relative hover:text-primary transition"><i class="fa-solid fa-cart-shopping text-xl"></i><span id="cart-count" class="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span></a>
-                <a href="login.html" class="hidden md:flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full hover:bg-blue-700 transition text-sm"><i class="fa-regular fa-user"></i> ورود</a>
+
+                <!-- خط جداکننده -->
+                <div class="hidden xl:block w-px h-6 bg-gray-200"></div>
+
+                <!-- جستجو -->
+                <div class="relative hidden md:block">
+                    <input type="text" id="global-search" placeholder="جستجو..." 
+                           class="bg-gray-100 rounded-xl px-4 py-2.5 pr-9 text-sm focus:outline-none focus:ring-2 focus:ring-primary w-40 lg:w-56 transition-all">
+                    <i class="fa-solid fa-search absolute right-3 top-2.5 text-gray-400 text-sm"></i>
+                </div>
+
+                <!-- علاقه‌مندی‌ها -->
+                <a href="wishlist.html" class="relative hover:text-primary transition group">
+                    <div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
+                        <i class="fa-regular fa-heart text-lg"></i>
+                    </div>
+                    <span id="wishlist-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold">0</span>
+                </a>
+
+                <!-- سبد خرید -->
+                <a href="cart.html" class="relative hover:text-primary transition group">
+                    <div class="w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition-colors">
+                        <i class="fa-solid fa-cart-shopping text-lg"></i>
+                    </div>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold">0</span>
+                </a>
+
+                <!-- ورود -->
+                <a href="login.html" class="hidden sm:flex items-center gap-2 bg-gradient-to-r from-primary to-blue-600 text-white px-4 py-2.5 rounded-xl hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 text-sm font-bold">
+                    <i class="fa-regular fa-user"></i>
+                    <span class="hidden lg:inline">ورود</span>
+                </a>
+
+                <!-- منوی موبایل -->
+                <button class="lg:hidden text-secondary text-xl w-10 h-10 rounded-xl bg-gray-100 flex items-center justify-center" id="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
-    </header>
 
-    <main class="pt-20">
+        <!-- منوی موبایل -->
+        <div class="lg:hidden hidden border-t border-gray-100 py-4" id="mobile-menu">
+            <nav class="flex flex-col gap-2">
+                <a href="index.html" class="px-4 py-3 text-secondary font-bold hover:bg-gray-50 rounded-xl transition-colors">خانه</a>
+                <a href="shop.html" class="px-4 py-3 text-secondary font-bold hover:bg-gray-50 rounded-xl transition-colors">محصولات</a>
+                <a href="blog.html" class="px-4 py-3 text-secondary font-bold hover:bg-gray-50 rounded-xl transition-colors">وبلاگ</a>
+                <a href="contact.html" class="px-4 py-3 text-secondary font-bold hover:bg-gray-50 rounded-xl transition-colors">تماس با ما</a>
+                
+                <div class="border-t border-gray-100 pt-3 mt-3 space-y-3">
+                    <a href="tel:09125165048" class="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl transition-colors">
+                        <i class="fa-solid fa-phone text-primary"></i>
+                        <span class="font-bold" dir="ltr">0912 516 5048</span>
+                    </a>
+                    
+                    <div class="flex gap-2 px-4">
+                        <a href="https://instagram.com/flashflow" target="_blank" class="flex-1 h-11 rounded-xl bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 flex items-center justify-center text-white">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://t.me/flashflow" target="_blank" class="flex-1 h-11 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                        <a href="https://wa.me/989125165048" target="_blank" class="flex-1 h-11 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- Spacer با ارتفاع مناسب -->
+<div class="h-20 lg:h-24"></div>
 
 <!-- Sports Hero Slider -->
 <section class="relative h-screen overflow-hidden" id="hero-slider">
@@ -285,6 +463,71 @@
     <div class="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-primary to-cyan-400 z-20 transition-all duration-5000" id="progress-bar" style="width: 0%"></div>
 </section>
 
+<!-- Categories Section (Static) -->
+<section class="py-16 bg-gray-50/50" id="categories-section">
+    <div class="container mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-black text-secondary text-center mb-10">دسته بندی های پیشنهادی</h2>
+        
+        <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+            
+            <!-- دسته‌بندی 1 -->
+            <a href="shop.html?category=football-shoes" class="category-item group cursor-pointer">
+                <div class="w-[160px] md:w-[180px] aspect-square rounded-full bg-gradient-to-br from-violet-50 to-purple-50 p-6 flex items-center justify-center shadow-sm hover:shadow-xl transition-all duration-500 group-hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1560769629-975ec9f66b37?w=300&q=80" alt="کفش فوتبال" class="w-full h-full object-contain drop-shadow-lg group-hover:rotate-6 transition-transform duration-500">
+                </div>
+                <p class="text-center text-sm font-bold text-secondary mt-4 group-hover:text-primary transition-colors duration-300">کفش فوتبال</p>
+            </a>
+
+            <!-- دسته‌بندی 2 -->
+            <a href="shop.html?category=jerseys" class="category-item group cursor-pointer">
+                <div class="w-[160px] md:w-[180px] aspect-square rounded-full bg-gradient-to-br from-red-50 to-pink-50 p-6 flex items-center justify-center shadow-sm hover:shadow-xl transition-all duration-500 group-hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=300&q=80" alt="لباس تیم‌های باشگاهی" class="w-full h-full object-contain drop-shadow-lg group-hover:rotate-6 transition-transform duration-500">
+                </div>
+                <p class="text-center text-sm font-bold text-secondary mt-4 group-hover:text-primary transition-colors duration-300">لباس تیم های باشگاهی</p>
+            </a>
+
+            <!-- دسته‌بندی 3 -->
+            <a href="shop.html?category=futsal-shoes" class="category-item group cursor-pointer">
+                <div class="w-[160px] md:w-[180px] aspect-square rounded-full bg-gradient-to-br from-green-50 to-emerald-50 p-6 flex items-center justify-center shadow-sm hover:shadow-xl transition-all duration-500 group-hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1511886929837-354d827aae26?w=300&q=80" alt="کفش فوتسال" class="w-full h-full object-contain drop-shadow-lg group-hover:rotate-6 transition-transform duration-500">
+                </div>
+                <p class="text-center text-sm font-bold text-secondary mt-4 group-hover:text-primary transition-colors duration-300">کفش فوتسال</p>
+            </a>
+
+            <!-- دسته‌بندی 4 -->
+            <a href="shop.html?category=bags" class="category-item group cursor-pointer">
+                <div class="w-[160px] md:w-[180px] aspect-square rounded-full bg-gradient-to-br from-blue-50 to-cyan-50 p-6 flex items-center justify-center shadow-sm hover:shadow-xl transition-all duration-500 group-hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&q=80" alt="کیف و کوله ورزشی" class="w-full h-full object-contain drop-shadow-lg group-hover:rotate-6 transition-transform duration-500">
+                </div>
+                <p class="text-center text-sm font-bold text-secondary mt-4 group-hover:text-primary transition-colors duration-300">کیف و کوله ورزشی</p>
+            </a>
+
+            <!-- دسته‌بندی 5 -->
+            <a href="shop.html?category=sneakers" class="category-item group cursor-pointer">
+                <div class="w-[160px] md:w-[180px] aspect-square rounded-full bg-gradient-to-br from-purple-50 to-pink-50 p-6 flex items-center justify-center shadow-sm hover:shadow-xl transition-all duration-500 group-hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&q=80" alt="کتونی / کفش پیاده‌روی" class="w-full h-full object-contain drop-shadow-lg group-hover:rotate-6 transition-transform duration-500">
+                </div>
+                <p class="text-center text-sm font-bold text-secondary mt-4 group-hover:text-primary transition-colors duration-300">کتونی / کفش پیاده روی</p>
+            </a>
+
+            <!-- دسته‌بندی 6 -->
+            <a href="shop.html?category=fitness" class="category-item group cursor-pointer">
+                <div class="w-[160px] md:w-[180px] aspect-square rounded-full bg-gradient-to-br from-orange-50 to-red-50 p-6 flex items-center justify-center shadow-sm hover:shadow-xl transition-all duration-500 group-hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=300&q=80" alt="لوازم تمرینی / بدنسازی" class="w-full h-full object-contain drop-shadow-lg group-hover:rotate-6 transition-transform duration-500">
+                </div>
+                <p class="text-center text-sm font-bold text-secondary mt-4 group-hover:text-primary transition-colors duration-300">لوازم تمرینی / بدنسازی</p>
+            </a>
+
+            <!-- دسته‌بندی 7 -->
+            <a href="shop.html?category=goalkeeper" class="category-item group cursor-pointer">
+                <div class="w-[160px] md:w-[180px] aspect-square rounded-full bg-gradient-to-br from-yellow-50 to-amber-50 p-6 flex items-center justify-center shadow-sm hover:shadow-xl transition-all duration-500 group-hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1517466785390-864a68127a6d?w=300&q=80" alt="لوازم دروازه‌بانی" class="w-full h-full object-contain drop-shadow-lg group-hover:rotate-6 transition-transform duration-500">
+                </div>
+                <p class="text-center text-sm font-bold text-secondary mt-4 group-hover:text-primary transition-colors duration-300">لوازم دروازه بانی</p>
+            </a>
+    </div>
+</section>
+
 <!-- Sports Selection Section (Minimal & Premium) -->
 <section class="py-24 bg-white relative overflow-hidden" id="sports-selection">
     <!-- المان تزئینی پس‌زمینه (بسیار محو) -->
@@ -392,6 +635,510 @@
                 </div>
             </a>
 
+        </div>
+    </div>
+</section>
+
+<!-- Amazing Offers Section (شگفت‌انگیز) -->
+<section class="py-12 bg-gray-50" id="amazing-offers">
+    <div class="container mx-auto px-4">
+        
+        <div class="flex flex-col lg:flex-row gap-6">
+            
+            <!-- کارت اصلی سمت راست (پیشنهاد ویژه) -->
+            <div class="lg:w-1/4 flex-shrink-0">
+                <div class="bg-gradient-to-b from-green-500 to-green-600 rounded-3xl p-8 text-white h-full min-h-[400px] relative overflow-hidden group cursor-pointer">
+                    <!-- پترن پس‌زمینه -->
+                    <div class="absolute inset-0 opacity-10">
+                        <div class="absolute top-10 right-10 w-32 h-32 bg-white rounded-full"></div>
+                        <div class="absolute bottom-20 left-10 w-24 h-24 bg-white rounded-full"></div>
+                    </div>
+                    
+                    <div class="relative z-10 h-full flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-black mb-2">پیشنهادات شگفت‌انگیز</h3>
+                            <p class="text-green-100 text-sm">فرصت‌های استثنایی این هفته</p>
+                        </div>
+                        
+                        <div class="flex flex-col items-center">
+                            <div class="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
+                                <span class="text-4xl font-black">۳۲٪</span>
+                            </div>
+                            <p class="text-sm text-center text-green-100">میانگین تخفیف محصولات</p>
+                        </div>
+                        
+                        <button class="w-full bg-white text-green-600 py-3 rounded-xl font-bold hover:bg-green-50 transition-colors duration-300">
+                            مشاهده همه
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- کانتینر محصولات با اسکرول افقی -->
+            <div class="flex-1 relative">
+                <!-- دکمه‌های ناوبری -->
+                <button id="scroll-left" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-700 hover:bg-gray-100 hover:scale-110 transition-all duration-300 rtl:-translate-x-full ltr:translate-x-0">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <button id="scroll-right" class="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-700 hover:bg-gray-100 hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <!-- کانتینر اسکرول -->
+                <div class="overflow-hidden px-16">
+                    <div id="amazing-scroll-container" class="flex gap-4 overflow-x-auto scroll-smooth pb-4 scrollbar-hide" style="scrollbar-width: none; -ms-overflow-style: none;">
+                        
+                        <!-- محصول 1 -->
+                        <div class="product-card-amazing flex-shrink-0 w-[280px] bg-white rounded-2xl border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+                            <div class="relative aspect-square p-4 overflow-hidden rounded-t-2xl bg-gray-50">
+                                <span class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center z-10">٪</span>
+                                <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?w=400&q=80" 
+                                     alt="توپ بسکتبال" 
+                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="text-xs text-gray-400">توپ</span>
+                                    <span class="text-xs text-gray-300">|</span>
+                                    <span class="text-xs text-gray-400">Molten</span>
+                                </div>
+                                <h4 class="text-sm font-bold text-secondary mb-3 line-clamp-2 h-10">
+                                    توپ بسکتبال مولتن مدل GL7X یک سایز 7
+                                </h4>
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-400 line-through">,۹۵۰,۰۰۰</span>
+                                        <span class="text-lg font-black text-primary">,۸۵۰,۰۰۰</span>
+                                    </div>
+                                    <span class="text-xs text-gray-500">تومان</span>
+                                </div>
+                                <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                                    <div class="flex gap-2">
+                                        <button class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:border-red-500 hover:text-red-500 transition-colors">
+                                            <i class="fa-regular fa-heart text-sm"></i>
+                                        </button>
+                                        <button class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:border-blue-500 hover:text-blue-500 transition-colors">
+                                            <i class="fa-solid fa-share-nodes text-sm"></i>
+                                        </button>
+                                    </div>
+                                    <button onclick="addToCart(1)" class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary transition-colors">
+                                        <i class="fa-solid fa-cart-shopping text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- محصول 2 -->
+                        <div class="product-card-amazing flex-shrink-0 w-[280px] bg-white rounded-2xl border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+                            <div class="relative aspect-square p-4 overflow-hidden rounded-t-2xl bg-gray-50">
+                                <span class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center z-10">۳۳٪</span>
+                                <img src="https://images.unsplash.com/photo-1614616038972-9c6f4f9a5f5f?w=400&q=80" 
+                                     alt="توپ فوتبال" 
+                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="text-xs text-gray-400">توپ</span>
+                                    <span class="text-xs text-gray-300">|</span>
+                                    <span class="text-xs text-gray-400">Adidas</span>
+                                </div>
+                                <h4 class="text-sm font-bold text-secondary mb-3 line-clamp-2 h-10">
+                                    توپ فوتبال طرح جام جهانی ۲۰۲۲ مدل ۳۲ پنل سایز 5
+                                </h4>
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-400 line-through">۹۵۰,۰۰۰</span>
+                                        <span class="text-lg font-black text-primary">۶۴۹,۵۰۰</span>
+                                    </div>
+                                    <span class="text-xs text-gray-500">تومان</span>
+                                </div>
+                                <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                                    <div class="flex gap-2">
+                                        <button class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:border-red-500 hover:text-red-500 transition-colors">
+                                            <i class="fa-regular fa-heart text-sm"></i>
+                                        </button>
+                                        <button class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:border-blue-500 hover:text-blue-500 transition-colors">
+                                            <i class="fa-solid fa-share-nodes text-sm"></i>
+                                        </button>
+                                    </div>
+                                    <button onclick="addToCart(2)" class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary transition-colors">
+                                        <i class="fa-solid fa-cart-shopping text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- محصول 3 -->
+                        <div class="product-card-amazing flex-shrink-0 w-[280px] bg-white rounded-2xl border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+                            <div class="relative aspect-square p-4 overflow-hidden rounded-t-2xl bg-gray-50">
+                                <span class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center z-10">۲۱٪</span>
+                                <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&q=80" 
+                                     alt="توپ فوتسال" 
+                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="text-xs text-gray-400">توپ </span>
+                                    <span class="text-xs text-gray-300">|</span>
+                                    <span class="text-xs text-gray-400">Molten</span>
+                                </div>
+                                <h4 class="text-sm font-bold text-secondary mb-3 line-clamp-2 h-10">
+                                    توپ فوتسال طرح مولتن مدل Vantaggio 4800 سایز 4
+                                </h4>
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-400 line-through">,۰۵۰,۰۰</span>
+                                        <span class="text-lg font-black text-primary">,۱۵۵,۰۰۰</span>
+                                    </div>
+                                    <span class="text-xs text-gray-500">تومان</span>
+                                </div>
+                                <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                                    <div class="flex gap-2">
+                                        <button class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:border-red-500 hover:text-red-500 transition-colors">
+                                            <i class="fa-regular fa-heart text-sm"></i>
+                                        </button>
+                                        <button class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:border-blue-500 hover:text-blue-500 transition-colors">
+                                            <i class="fa-solid fa-share-nodes text-sm"></i>
+                                        </button>
+                                    </div>
+                                    <button onclick="addToCart(3)" class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary transition-colors">
+                                        <i class="fa-solid fa-cart-shopping text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- محصول 4 -->
+                        <div class="product-card-amazing flex-shrink-0 w-[280px] bg-white rounded-2xl border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+                            <div class="relative aspect-square p-4 overflow-hidden rounded-t-2xl bg-gray-50">
+                                <span class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center z-10">۱۳٪</span>
+                                <img src="https://images.unsplash.com/photo-1518605348400-43dd531b7b57?w=400&q=80" 
+                                     alt="توپ فوتسال" 
+                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="text-xs text-gray-400">توپ </span>
+                                    <span class="text-xs text-gray-300">|</span>
+                                    <span class="text-xs text-gray-400">Uhlsport</span>
+                                </div>
+                                <h4 class="text-sm font-bold text-secondary mb-3 line-clamp-2 h-10">
+                                    توپ فوتسال طرح Uhlsport سایز 4 الی 5
+                                </h4>
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-400 line-through">۱۱,۵۰۰,۰۰۰</span>
+                                        <span class="text-lg font-black text-primary">۹,۹۵۰,۰۰۰</span>
+                                    </div>
+                                    <span class="text-xs text-gray-500">تومان</span>
+                                </div>
+                                <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                                    <div class="flex gap-2">
+                                        <button class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:border-red-500 hover:text-red-500 transition-colors">
+                                            <i class="fa-regular fa-heart text-sm"></i>
+                                        </button>
+                                        <button class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:border-blue-500 hover:text-blue-500 transition-colors">
+                                            <i class="fa-solid fa-share-nodes text-sm"></i>
+                                        </button>
+                                    </div>
+                                    <button onclick="addToCart(4)" class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary transition-colors">
+                                        <i class="fa-solid fa-cart-shopping text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- محصول 5 (برای تست اسکرول) -->
+                        <div class="product-card-amazing flex-shrink-0 w-[280px] bg-white rounded-2xl border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+                            <div class="relative aspect-square p-4 overflow-hidden rounded-t-2xl bg-gray-50">
+                                <span class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold w-8 h-8 rounded-full flex items-center justify-center z-10">۴۵٪</span>
+                                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80" 
+                                     alt="کفش ورزشی" 
+                                     class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="p-4">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="text-xs text-gray-400">Nike</span>
+                                    <span class="text-xs text-gray-300">|</span>
+                                    <span class="text-xs text-gray-400">ورزشی</span>
+                                </div>
+                                <h4 class="text-sm font-bold text-secondary mb-3 line-clamp-2 h-10">
+                                    کفش ورزشی نایک مدل Air Zoom پگاسوس
+                                </h4>
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex flex-col">
+                                        <span class="text-xs text-gray-400 line-through">۸,۰۰۰,۰۰۰</span>
+                                        <span class="text-lg font-black text-primary">۴,۴۰۰,۰۰۰</span>
+                                    </div>
+                                    <span class="text-xs text-gray-500">تومان</span>
+                                </div>
+                                <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                                    <div class="flex gap-2">
+                                        <button class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:border-red-500 hover:text-red-500 transition-colors">
+                                            <i class="fa-regular fa-heart text-sm"></i>
+                                        </button>
+                                        <button class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:border-blue-500 hover:text-blue-500 transition-colors">
+                                            <i class="fa-solid fa-share-nodes text-sm"></i>
+                                        </button>
+                                    </div>
+                                    <button onclick="addToCart(5)" class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:border-primary hover:text-primary transition-colors">
+                                        <i class="fa-solid fa-cart-shopping text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newest Products Section -->
+<section class="py-24 bg-white relative overflow-hidden" id="newest-products">
+    <!-- المان‌های تزئینی پس‌زمینه -->
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-primary/5 to-cyan-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-purple-500/5 to-pink-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        
+        <!-- هدر سکشن -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+                <div class="flex items-center gap-3 mb-3">
+                    <span class="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-br from-primary to-cyan-500 text-white rounded-xl shadow-lg shadow-primary/30">
+                        <i class="fa-solid fa-sparkles text-lg"></i>
+                    </span>
+                    <span class="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase">New Arrivals</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black text-secondary leading-tight">
+                    جدیدترین <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-500">محصولات</span>
+                </h2>
+                <p class="text-gray-500 mt-3 max-w-xl">تازه‌ترین محصولات رسیده به فروشگاه را اینجا ببینید. همیشه به‌روز و پیشرو باشید!</p>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button class="group flex items-center gap-2 text-secondary font-bold hover:text-primary transition-colors duration-300">
+                    <span>مشاهده همه</span>
+                    <span class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-arrow-left text-sm transform group-hover:-translate-x-1 transition-transform"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <!-- گرید محصولات جدید -->
+        <div id="newest-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- محصول 1: با Badge ویژه -->
+            <article class="newest-card group relative bg-white rounded-3xl border border-gray-100 hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 overflow-hidden">
+                <!-- Badge جدید -->
+                <div class="absolute top-4 right-4 z-20 flex gap-2">
+                    <span class="bg-gradient-to-r from-primary to-cyan-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg shadow-primary/30 animate-pulse">
+                        جدید
+                    </span>
+                </div>
+
+                <!-- تصویر -->
+                <div class="relative aspect-[4/5] bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden rounded-t-3xl">
+                    <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&q=80" 
+                         alt="کفش ورزشی نایک" 
+                         loading="lazy"
+                         class="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-700 ease-luxury">
+                    
+                    <!-- دکمه‌های اکشن -->
+                    <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 translate-y-16 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-luxury z-20 px-4">
+                        <button onclick="openQuickView(101)" class="w-12 h-12 bg-white text-secondary rounded-full shadow-lg flex items-center justify-center hover:bg-secondary hover:text-white transition-colors duration-300">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                        <button onclick="addToCart(101)" class="flex-1 h-12 bg-primary text-white rounded-full shadow-lg shadow-primary/30 font-bold text-sm flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            افزودن
+                        </button>
+                        <button onclick="toggleWishlist(this)" class="w-12 h-12 bg-white text-secondary rounded-full shadow-lg flex items-center justify-center hover:bg-red-50 hover:text-red-500 transition-colors duration-300">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- اطلاعات -->
+                <div class="p-5">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs text-gray-400 font-medium">کفش ورزشی</span>
+                        <span class="text-[10px] text-gray-400 flex items-center gap-1">
+                            <i class="fa-regular fa-clock"></i>
+                             روز پیش
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-secondary mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-300 h-14">
+                        <a href="product.html?id=101">کفش ورزشی نایک مدل Air Jordan 1 Mid</a>
+                    </h3>
+                    <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                        <span class="text-xl font-black text-primary">۶,۸۰۰,۰۰۰ <span class="text-sm font-medium text-gray-500">تومان</span></span>
+                        <div class="flex items-center gap-1 text-yellow-400 text-xs">
+                            <i class="fa-solid fa-star"></i>
+                            <span class="text-gray-600 font-bold">5.0</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- محصول 2 -->
+            <article class="newest-card group relative bg-white rounded-3xl border border-gray-100 hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 overflow-hidden">
+                <div class="absolute top-4 right-4 z-20">
+                    <span class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg shadow-green-500/30">
+                        تازه رسید
+                    </span>
+                </div>
+
+                <div class="relative aspect-[4/5] bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden rounded-t-3xl">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" 
+                         alt="ساعت هوشمند" 
+                         loading="lazy"
+                         class="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-700 ease-luxury">
+                    
+                    <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 translate-y-16 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-luxury z-20 px-4">
+                        <button onclick="openQuickView(102)" class="w-12 h-12 bg-white text-secondary rounded-full shadow-lg flex items-center justify-center hover:bg-secondary hover:text-white transition-colors duration-300">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                        <button onclick="addToCart(102)" class="flex-1 h-12 bg-primary text-white rounded-full shadow-lg shadow-primary/30 font-bold text-sm flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            افزودن
+                        </button>
+                        <button onclick="toggleWishlist(this)" class="w-12 h-12 bg-white text-secondary rounded-full shadow-lg flex items-center justify-center hover:bg-red-50 hover:text-red-500 transition-colors duration-300">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="p-5">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs text-gray-400 font-medium">ساعت هوشمند</span>
+                        <span class="text-[10px] text-gray-400 flex items-center gap-1">
+                            <i class="fa-regular fa-clock"></i>
+                            ۳ روز پیش
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-secondary mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-300 h-14">
+                        <a href="product.html?id=102">ساعت هوشمند اپل واچ سری ۹</a>
+                    </h3>
+                    <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                        <span class="text-xl font-black text-primary">۱۸,۵۰۰,۰۰۰ <span class="text-sm font-medium text-gray-500">تومان</span></span>
+                        <div class="flex items-center gap-1 text-yellow-400 text-xs">
+                            <i class="fa-solid fa-star"></i>
+                            <span class="text-gray-600 font-bold">4.9</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- محصول 3 -->
+            <article class="newest-card group relative bg-white rounded-3xl border border-gray-100 hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 overflow-hidden">
+                <div class="absolute top-4 right-4 z-20">
+                    <span class="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg shadow-purple-500/30">
+                        New
+                    </span>
+                </div>
+
+                <div class="relative aspect-[4/5] bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden rounded-t-3xl">
+                    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&q=80" 
+                         alt="هدفون بی‌سیم" 
+                         loading="lazy"
+                         class="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-700 ease-luxury">
+                    
+                    <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 translate-y-16 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-luxury z-20 px-4">
+                        <button onclick="openQuickView(103)" class="w-12 h-12 bg-white text-secondary rounded-full shadow-lg flex items-center justify-center hover:bg-secondary hover:text-white transition-colors duration-300">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                        <button onclick="addToCart(103)" class="flex-1 h-12 bg-primary text-white rounded-full shadow-lg shadow-primary/30 font-bold text-sm flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            افزودن
+                        </button>
+                        <button onclick="toggleWishlist(this)" class="w-12 h-12 bg-white text-secondary rounded-full shadow-lg flex items-center justify-center hover:bg-red-50 hover:text-red-500 transition-colors duration-300">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="p-5">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs text-gray-400 font-medium">هدفون</span>
+                        <span class="text-[10px] text-gray-400 flex items-center gap-1">
+                            <i class="fa-regular fa-clock"></i>
+                            ۵ روز پیش
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-secondary mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-300 h-14">
+                        <a href="product.html?id=103">هدفون بی‌سیم سونی مدل WH-1000XM5</a>
+                    </h3>
+                    <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                        <span class="text-xl font-black text-primary">۱۲,۵۰۰,۰۰۰ <span class="text-sm font-medium text-gray-500">تومان</span></span>
+                        <div class="flex items-center gap-1 text-yellow-400 text-xs">
+                            <i class="fa-solid fa-star"></i>
+                            <span class="text-gray-600 font-bold">4.8</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- محصول 4 -->
+            <article class="newest-card group relative bg-white rounded-3xl border border-gray-100 hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 overflow-hidden">
+                <div class="absolute top-4 right-4 z-20">
+                    <span class="bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg shadow-orange-500/30">
+                        به‌زودی
+                    </span>
+                </div>
+
+                <div class="relative aspect-[4/5] bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden rounded-t-3xl">
+                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&q=80" 
+                         alt="دوربین پولاروید" 
+                         loading="lazy"
+                         class="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-700 ease-luxury">
+                    
+                    <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-3 translate-y-16 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-luxury z-20 px-4">
+                        <button onclick="openQuickView(104)" class="w-12 h-12 bg-white text-secondary rounded-full shadow-lg flex items-center justify-center hover:bg-secondary hover:text-white transition-colors duration-300">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                        <button onclick="addToCart(104)" class="flex-1 h-12 bg-primary text-white rounded-full shadow-lg shadow-primary/30 font-bold text-sm flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors duration-300">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            افزودن
+                        </button>
+                        <button onclick="toggleWishlist(this)" class="w-12 h-12 bg-white text-secondary rounded-full shadow-lg flex items-center justify-center hover:bg-red-50 hover:text-red-500 transition-colors duration-300">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="p-5">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs text-gray-400 font-medium">دوربین</span>
+                        <span class="text-[10px] text-gray-400 flex items-center gap-1">
+                            <i class="fa-regular fa-clock"></i>
+                            ۱ هفته پیش
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-secondary mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-300 h-14">
+                        <a href="product.html?id=104">دوربین پولاروید Fujifilm Instax Mini</a>
+                    </h3>
+                    <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                        <span class="text-xl font-black text-primary">۴,۲۰۰,۰۰۰ <span class="text-sm font-medium text-gray-500">تومان</span></span>
+                        <div class="flex items-center gap-1 text-yellow-400 text-xs">
+                            <i class="fa-solid fa-star"></i>
+                            <span class="text-gray-600 font-bold">4.7</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- دکمه مشاهده بیشتر -->
+        <div class="text-center mt-12">
+            <button class="group inline-flex items-center gap-3 bg-secondary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-primary transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/30 transform hover:-translate-y-1">
+                <span>مشاهده همه محصولات جدید</span>
+                <i class="fa-solid fa-arrow-down transform group-hover:translate-y-1 transition-transform"></i>
+            </button>
         </div>
     </div>
 </section>
@@ -553,18 +1300,51 @@
     <!-- محتوا -->
 </div>
 
-        <!-- Trendy Products -->
-        <section id="products" class="py-20 container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-black text-secondary mb-4">محصولات پرطرفدار</h2>
-                <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+<!-- Horizontal Product Card -->
+<article class="product-card-horizontal group flex flex-col sm:flex-row bg-white rounded-2xl border border-gray-100 hover:shadow-xl transition-all duration-500 overflow-hidden">
+    
+    <!-- تصویر (سمت راست در RTL) -->
+    <div class="relative w-full sm:w-1/3 aspect-square sm:aspect-auto bg-gray-50 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80" 
+             alt="کفش ورزشی" 
+             class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-luxury">
+        <button onclick="toggleWishlist(this)" class="absolute top-3 left-3 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 hover:bg-white transition-all shadow-sm">
+            <i class="fa-regular fa-heart"></i>
+        </button>
+    </div>
+
+    <!-- اطلاعات (سمت چپ در RTL) -->
+    <div class="flex-1 p-6 flex flex-col justify-between">
+        <div>
+            <div class="flex items-center gap-2 mb-2">
+                <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-md">موجود در انبار</span>
+                <span class="text-xs text-gray-400">کفش ورزشی</span>
             </div>
+            <h3 class="text-xl font-bold text-secondary mb-2 group-hover:text-primary transition-colors">
+                <a href="product.html?id=2">کفش دویدن نایک مدل Air Zoom Pegasus</a>
+            </h3>
+            <p class="text-gray-500 text-sm line-clamp-2 mb-4">
+                طراحی ارگونومیک برای دویدن‌های طولانی با کفی ضربه‌گیر و رویه مش تنفس‌پذیر. مناسب برای جاده و تردمیل.
+            </p>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="product-grid">
-                <!-- محصولات توسط JavaScript پر می‌شوند -->
+            <!-- انتخاب رنگ (Swatches) -->
+            <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs text-gray-400 ml-2">رنگ:</span>
+                <button class="w-6 h-6 rounded-full bg-black border-2 border-white shadow-sm ring-2 ring-transparent hover:ring-gray-300 transition-all"></button>
+                <button class="w-6 h-6 rounded-full bg-red-500 border-2 border-white shadow-sm ring-2 ring-transparent hover:ring-gray-300 transition-all"></button>
+                <button class="w-6 h-6 rounded-full bg-blue-500 border-2 border-white shadow-sm ring-2 ring-transparent hover:ring-gray-300 transition-all"></button>
             </div>
-        </section>
-    </main>
+        </div>
+
+        <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+            <span class="text-2xl font-black text-primary">۴,۸۰۰,۰۰۰ <span class="text-sm font-medium text-gray-500">تومان</span></span>
+            <button onclick="addToCart(2)" class="bg-secondary text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-primary transition-colors duration-300 flex items-center gap-2">
+                <i class="fa-solid fa-cart-shopping"></i>
+                افزودن به سبد
+            </button>
+        </div>
+    </div>
+</article>
 
     <!-- Special Offer Section -->
 <section class="py-16 bg-gray-50">
@@ -960,41 +1740,249 @@
     </div>
 </section>
 
-    <!-- Footer -->
-    <footer class="bg-secondary text-gray-300 py-16 mt-20">
-        <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
-            <div>
-                <h3 class="text-white text-xl font-bold mb-4 flex items-center gap-2"><i class="fa-solid fa-bolt text-primary"></i> فلش فلو</h3>
-                <p class="text-sm leading-7">ارائه‌دهنده جدیدترین گجت‌های دیجیتال با ضمانت اصالت و بهترین قیمت بازار.</p>
+<!-- Brands Section -->
+<section class="py-16 bg-gray-100/50 relative overflow-hidden" id="brands-section">
+    <!-- المان‌های تزئینی پس‌زمینه -->
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+    
+    <div class="container mx-auto px-4">
+        <!-- هدر سکشن -->
+        <div class="text-center mb-10">
+            <h2 class="text-2xl md:text-3xl font-black text-secondary">برند‌ها</h2>
+            <p class="text-gray-500 text-sm mt-2">معتبرترین برندهای ورزشی جهان</p>
+        </div>
+
+        <!-- کانتینر اسلایدر -->
+        <div class="relative">
+            <!-- دکمه‌های ناوبری -->
+            <button id="brands-prev" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white hover:scale-110 transition-all duration-300 opacity-0 group-hover:opacity-100">
+                <i class="fa-solid fa-chevron-right text-sm"></i>
+            </button>
+            <button id="brands-next" class="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white hover:scale-110 transition-all duration-300 opacity-0 group-hover:opacity-100">
+                <i class="fa-solid fa-chevron-left text-sm"></i>
+            </button>
+
+            <!-- اسلایدر برندها -->
+            <div class="brands-slider-wrapper group">
+                <div id="brands-slider" class="flex gap-6 overflow-x-hidden">
+                    
+                    <!-- برند 1: Umbro -->
+                    <div class="brand-slide flex-shrink-0 w-[160px] md:w-[200px]">
+                        <a href="shop.html?brand=umbro" class="block bg-white rounded-2xl p-6 h-[140px] flex items-center justify-center shadow-sm hover:shadow-xl transition-all duration-500 group/brand">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Umbro_logo.svg/600px-Umbro_logo.svg.png" 
+                                 alt="Umbro" 
+                                 class="max-w-[120px] max-h-[60px] object-contain grayscale opacity-60 group-hover/brand:grayscale-0 group-hover/brand:opacity-100 transition-all duration-500">
+                        </a>
+                    </div>
+
+                    <!-- برند 2: Puma -->
+                    <div class="brand-slide flex-shrink-0 w-[160px] md:w-[200px]">
+                        <a href="shop.html?brand=puma" class="block bg-white rounded-2xl p-6 h-[140px] flex items-center justify-center shadow-sm hover:shadow-xl transition-all duration-500 group/brand">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Puma_Logo.svg/600px-Puma_Logo.svg.png" 
+                                 alt="Puma" 
+                                 class="max-w-[120px] max-h-[60px] object-contain grayscale opacity-60 group-hover/brand:grayscale-0 group-hover/brand:opacity-100 transition-all duration-500">
+                        </a>
+                    </div>
+
+                    <!-- برند 3: Nike -->
+                    <div class="brand-slide flex-shrink-0 w-[160px] md:w-[200px]">
+                        <a href="shop.html?brand=nike" class="block bg-white rounded-2xl p-6 h-[140px] flex items-center justify-center shadow-sm hover:shadow-xl transition-all duration-500 group/brand">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/600px-Logo_NIKE.svg.png" 
+                                 alt="Nike" 
+                                 class="max-w-[120px] max-h-[60px] object-contain grayscale opacity-60 group-hover/brand:grayscale-0 group-hover/brand:opacity-100 transition-all duration-500">
+                        </a>
+                    </div>
+
+                    <!-- برند 4: Adidas -->
+                    <div class="brand-slide flex-shrink-0 w-[160px] md:w-[200px]">
+                        <a href="shop.html?brand=adidas" class="block bg-white rounded-2xl p-6 h-[140px] flex items-center justify-center shadow-sm hover:shadow-xl transition-all duration-500 group/brand">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/600px-Adidas_Logo.svg.png" 
+                                 alt="Adidas" 
+                                 class="max-w-[120px] max-h-[60px] object-contain grayscale opacity-60 group-hover/brand:grayscale-0 group-hover/brand:opacity-100 transition-all duration-500">
+                        </a>
+                    </div>
+
+                    <!-- برند 5: Asics -->
+                    <div class="brand-slide flex-shrink-0 w-[160px] md:w-[200px]">
+                        <a href="shop.html?brand=asics" class="block bg-white rounded-2xl p-6 h-[140px] flex items-center justify-center shadow-sm hover:shadow-xl transition-all duration-500 group/brand">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Asics_logo.svg/600px-Asics_logo.svg.png" 
+                                 alt="Asics" 
+                                 class="max-w-[120px] max-h-[60px] object-contain grayscale opacity-60 group-hover/brand:grayscale-0 group-hover/brand:opacity-100 transition-all duration-500">
+                        </a>
+                    </div>
+
+                    <!-- برند 6: New Balance -->
+                    <div class="brand-slide flex-shrink-0 w-[160px] md:w-[200px]">
+                        <a href="shop.html?brand=newbalance" class="block bg-white rounded-2xl p-6 h-[140px] flex items-center justify-center shadow-sm hover:shadow-xl transition-all duration-500 group/brand">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/New_Balance_logo.svg/600px-New_Balance_logo.svg.png" 
+                                 alt="New Balance" 
+                                 class="max-w-[120px] max-h-[60px] object-contain grayscale opacity-60 group-hover/brand:grayscale-0 group-hover/brand:opacity-100 transition-all duration-500">
+                        </a>
+                    </div>
+
+                    <!-- برند 7: Reebok (برای اسلایدر) -->
+                    <div class="brand-slide flex-shrink-0 w-[160px] md:w-[200px]">
+                        <a href="shop.html?brand=reebok" class="block bg-white rounded-2xl p-6 h-[140px] flex items-center justify-center shadow-sm hover:shadow-xl transition-all duration-500 group/brand">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Reebok_vector_logo.svg/600px-Reebok_vector_logo.svg.png" 
+                                 alt="Reebok" 
+                                 class="max-w-[120px] max-h-[60px] object-contain grayscale opacity-60 group-hover/brand:grayscale-0 group-hover/brand:opacity-100 transition-all duration-500">
+                        </a>
+                    </div>
+
+                    <!-- برند 8: Under Armour -->
+                    <div class="brand-slide flex-shrink-0 w-[160px] md:w-[200px]">
+                        <a href="shop.html?brand=underarmour" class="block bg-white rounded-2xl p-6 h-[140px] flex items-center justify-center shadow-sm hover:shadow-xl transition-all duration-500 group/brand">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Under_Armour_logo.svg/600px-Under_Armour_logo.svg.png" 
+                                 alt="Under Armour" 
+                                 class="max-w-[120px] max-h-[60px] object-contain grayscale opacity-60 group-hover/brand:grayscale-0 group-hover/brand:opacity-100 transition-all duration-500">
+                        </a>
+                    </div>
+
+                </div>
             </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">دسترسی سریع</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="shop.html" class="hover:text-primary transition">فروشگاه</a></li>
-                    <li><a href="blog.html" class="hover:text-primary transition">وبلاگ</a></li>
-                    <li><a href="contact.html" class="hover:text-primary transition">تماس با ما</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">حساب کاربری</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="login.html" class="hover:text-primary transition">ورود / ثبت‌نام</a></li>
-                    <li><a href="profile.html" class="hover:text-primary transition">پروفایل کاربری</a></li>
-                    <li><a href="cart.html" class="hover:text-primary transition">سبد خرید</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-4">خبرنامه</h4>
-                <form class="flex gap-2">
-                    <input type="email" placeholder="ایمیل شما" class="bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-sm w-full focus:outline-none focus:border-primary">
-                    <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"><i class="fa-solid fa-paper-plane"></i></button>
-                </form>
+
+            <!-- نشانگرهای اسلایدر (Dots) -->
+            <div class="flex justify-center gap-2 mt-8" id="brands-dots">
+                <button class="dot w-2 h-2 rounded-full bg-gray-400 hover:bg-primary transition-all duration-300 active" data-index="0"></button>
+                <button class="dot w-2 h-2 rounded-full bg-gray-300 hover:bg-primary transition-all duration-300" data-index="1"></button>
+                <button class="dot w-2 h-2 rounded-full bg-gray-300 hover:bg-primary transition-all duration-300" data-index="2"></button>
+                <button class="dot w-2 h-2 rounded-full bg-gray-300 hover:bg-primary transition-all duration-300" data-index="3"></button>
             </div>
         </div>
-        <div class="border-t border-white/10 mt-12 pt-8 text-center text-sm">
-            © ۲۰۲۴ فلش فلو. تمامی حقوق محفوظ است.
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="relative bg-secondary text-white overflow-hidden">
+    <!-- بک‌گراند تصویر فوتبالی -->
+    <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?w=1920&q=80" 
+             alt="Football Stadium Background" 
+             class="w-full h-full object-cover opacity-15">
+        <div class="absolute inset-0 bg-gradient-to-b from-secondary/95 via-secondary/95 to-black"></div>
+    </div>
+
+    <!-- المان‌های تزئینی -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        <!-- بخش اصلی فوتر -->
+        <div class="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+            
+            <!-- ستون 1: درباره ما -->
+            <div class="lg:col-span-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary to-cyan-500 rounded-xl flex items-center justify-center shadow-lg shadow-primary/30">
+                        <i class="fa-solid fa-bolt text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black">فلش فلو</h3>
+                        <p class="text-xs text-gray-400">Flash Flow</p>
+                    </div>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
+                    ارائه‌دهنده برترین تجهیزات ورزشی با کیفیت جهانی. همراه شما در مسیر سلامتی و قهرمانی.
+                </p>
+                
+                <!-- شبکه‌های اجتماعی -->
+                <div class="mb-6">
+                    <h4 class="text-sm font-bold mb-4 text-gray-300">ما را دنبال کنید</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <!-- اینستاگرام -->
+                        <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300" title="اینستاگرام">
+                            <i class="fa-brands fa-instagram text-xl text-white"></i>
+                        </a>
+                        <!-- تلگرام -->
+                        <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300" title="تلگرام">
+                            <i class="fa-brands fa-telegram text-xl text-white"></i>
+                        </a>
+                        <!-- واتساپ -->
+                        <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-green-500/30 transition-all duration-300" title="واتساپ">
+                            <i class="fa-brands fa-whatsapp text-xl text-white"></i>
+                        </a>
+                        <!-- بله -->
+                        <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300" title="بله">
+                            <i class="fa-solid fa-check-double text-xl text-white"></i>
+                        </a>
+                        <!-- نشان -->
+                        <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300" title="نشان">
+                            <i class="fa-solid fa-location-crosshairs text-xl text-white"></i>
+                        </a>
+                        <!-- بلد -->
+                        <a href="#" class="w-11 h-11 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center hover:scale-110 hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300" title="بلد">
+                            <i class="fa-solid fa-map-location-dot text-xl text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ستون 2: دسترسی سریع -->
+            <div>
+                <h4 class="text-lg font-bold mb-6 flex items-center gap-2">
+                    <span class="w-1 h-6 bg-primary rounded-full"></span>
+                    دسترسی سریع
+                </h4>
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"><i class="fa-solid fa-chevron-left text-xs transform group-hover:-translate-x-1 transition-transform"></i> صفحه اصلی</a></li>
+                    <li><a href="shop.html" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"><i class="fa-solid fa-chevron-left text-xs transform group-hover:-translate-x-1 transition-transform"></i> فروشگاه</a></li>
+                    <li><a href="blog.html" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"><i class="fa-solid fa-chevron-left text-xs transform group-hover:-translate-x-1 transition-transform"></i> وبلاگ</a></li>
+                    <li><a href="contact.html" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"><i class="fa-solid fa-chevron-left text-xs transform group-hover:-translate-x-1 transition-transform"></i> تماس با ما</a></li>
+                </ul>
+            </div>
+
+            <!-- ستون 3: دسته‌بندی‌ها -->
+            <div>
+                <h4 class="text-lg font-bold mb-6 flex items-center gap-2">
+                    <span class="w-1 h-6 bg-primary rounded-full"></span>
+                    دسته‌بندی‌ها
+                </h4>
+                <ul class="space-y-3">
+                    <li><a href="shop.html?category=football" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"><i class="fa-solid fa-chevron-left text-xs transform group-hover:-translate-x-1 transition-transform"></i> فوتبال</a></li>
+                    <li><a href="shop.html?category=fitness" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"><i class="fa-solid fa-chevron-left text-xs transform group-hover:-translate-x-1 transition-transform"></i> بدنسازی</a></li>
+                    <li><a href="shop.html?category=running" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"><i class="fa-solid fa-chevron-left text-xs transform group-hover:-translate-x-1 transition-transform"></i> دویدن</a></li>
+                    <li><a href="shop.html?category=swimming" class="text-gray-400 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"><i class="fa-solid fa-chevron-left text-xs transform group-hover:-translate-x-1 transition-transform"></i> شنا</a></li>
+                </ul>
+            </div>
+
+            <!-- ستون 4: نقشه -->
+            <div class="lg:col-span-1">
+                <h4 class="text-lg font-bold mb-6 flex items-center gap-2">
+                    <span class="w-1 h-6 bg-primary rounded-full"></span>
+                    موقعیت ما
+                </h4>
+                <div class="rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10 h-64">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.8976781593616!2d51.3374253!3d35.689197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e0070a0a0a0a0%3A0x0!2zMTIz!5e0!3m2!1sen!2sir!4v1234567890" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; filter: grayscale(100%) invert(92%) contrast(83%);" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="نقشه موقعیت">
+                    </iframe>
+                </div>
+            </div>
+
         </div>
-    </footer>
+
+        <!-- خط جداکننده -->
+        <div class="border-t border-white/10 my-8"></div>
+
+        <!-- بخش پایینی -->
+        <div class="py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-gray-400 text-sm text-center md:text-right">
+                © ۱۴۰۳ فلش فلو. تمامی حقوق محفوظ است.
+            </p>
+            <div class="flex items-center gap-4">
+                <a href="#" class="text-gray-400 hover:text-primary text-sm transition-colors">قوانین و مقررات</a>
+                <span class="text-gray-600">|</span>
+                <a href="#" class="text-gray-400 hover:text-primary text-sm transition-colors">حریم خصوصی</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <script src="js/app.js"></script>
 </body>
